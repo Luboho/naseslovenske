@@ -58,7 +58,7 @@ export default {
             }
         }
     },
-
+    // Watch data atribute. if change (edit/update data)
     watch: {
         data: function(val) {
             this.value = val;

@@ -12,7 +12,7 @@
 
                     <p class="pt-12 text-gray-500 text-xs uppercase font-bold">Create</p>
 
-                    <router-link to="/posts/create" class="flex items-center py-2 hover:text-blue-600 text-sm">
+                    <router-link to="/profiles/create" class="flex items-center py-2 hover:text-blue-600 text-sm">
                         <svg viewBox="0 0 24 24" class="fill-current text-blue-600 w-5 h-5">
                             <path d="M23.3 11.9c0 .9-.6 1.4-1.4 1.4h-8.5v8.5c0 .9-.6 1.4-1.4 1.4s-1.4-.6-1.4-1.4v-8.5H2c-.9 0-1.4-.6-1.4-1.4 0-.9.6-1.4 1.4-1.4h8.5V1.9c0-.9.6-1.4 1.4-1.4s1.4.6 1.4 1.4v8.5h8.5c.9 0 1.5.6 1.5 1.5z"/>
                         </svg>
@@ -49,13 +49,14 @@
             <!-- Right Top Section -->
             <!-- Right Bottom Section -->
             <div class="flex flex-col flex-1 h-screen overflow-y-hidden"> 
-                <router-view  class="p-6 overflow-x-hidden"></router-view>
+                <router-view :user="user" class="p-6 overflow-x-hidden"></router-view>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+
 export default {
     name: "App",
 
@@ -63,20 +64,32 @@ export default {
         'user' 
     ],
 
+    methods: {
+        setUserToLocal: function() {
+            localStorage.setItem('user', JSON.stringify({'usermail' : this.user.email, 'userApiToken' : this.user.api_token}));
+        }
+    },
+
     created() {     // Similar to mounted() property, but created() is executed asap after App is created. So, earlier than mounted() which is executed afer than component is created.
-            window.axios.interceptors.request.use(// Whenever axios make request use api_token from config file.
-                (config) => {
-                    if (config.method === 'get') { // If GET request append api_token to URL
-                        config.url = config.url + '?api_token=' + this.user.api_token;
-                    } else {
-                        config.data = {     // Set Users' API Token config
-                            ...config.data, // ...spread Operator to copy what in the config already is and append api_token from data
-                            api_token: this.user.api_token 
-                        };
-                    }
-                    return config;
-                }
-            )
+            // window.axios.interceptors.request.use(// Whenever axios make request use api_token from config file.
+            //     (config) => {
+            //         if (config.method === 'get') { // If GET request append api_token to URL
+            //             config.url = config.url + '?api_token=' + this.user.api_token;
+            //         } else {
+            //             config.data = {     // Set Users' API Token config
+            //                 ...config.data, // ...spread Operator to copy what in the config already is and append api_token from data
+            //                 api_token: this.user.api_token 
+            //             };
+            //         }
+            //         return config;
+            //     }
+            // )
+
+            if(this.user !== undefined) {
+                this.setUserToLocal();
+                // this.setUserGlobally();
+            }
+            
         },
 }
 </script>
