@@ -1,8 +1,10 @@
 <template>
   <div class="p-3">
-          <a href="#" class="text-indigo-400" @click="$router.back()">
+          <a href="#" class="py-2 text-indigo-400" @click="$router.back()">
               ← Back
           </a>
+          <h1 class="text-blue-500 py-4 uppercase italic font-bold"> Upraviť príspevok</h1> 
+
       <form @submit.prevent="saveForm" enctype="multipart/form-data">
         <InputField name="title" label="Title" :errors="errors" placeholder="Titul" 
                         @update:field = "form.title = $event" :data="form.title" />
@@ -15,7 +17,7 @@
 
         <!-- Buttons -->
         <div class="flex justify-end">
-          <button class="py-2 px-4 rounded text-red-700 border mr-5 hover:border-red-700">Cancel</button>
+          <button @click.prevent="$router.back()" class="py-2 px-4 rounded text-red-700 border mr-5 hover:border-red-700">Cancel</button>
           <button class="bg-indigo-500 py-2 px-4 rounded text-white hover:bg-indigo-400">Save</button>
         </div>
   </form>
@@ -24,12 +26,12 @@
 </template>
 
 <script>
-    import InputField from '../components/InputField';
-    import FileInput from '../components/FileInput';
+    import InputField from '../../components/InputField';
+    import FileInput from '../../components/FileInput';
 
 
 export default {
-    name: "ProfilesEdit",
+    name: "PostsEdit",
 
     props: ['user'],
 
@@ -39,7 +41,8 @@ export default {
     },
 
     mounted() {
-        axios.get('/api/profiles/' + this.$route.params.id)
+        console.log(this.$route);
+        axios.get('/api/posts/' + this.$route.params.id)
                 .then(response => {
                     this.form = response.data.data;
                     this.form.image = "";
@@ -48,8 +51,8 @@ export default {
                 })
                 .catch(error => {
                     this.loading = false;
-                    if(error.response.status === 404) { // Redirect to /contacts if response status is 404.
-                        this.$router.push('/profiles');
+                    if(error.response.status === 404) { // Redirect to / if response status is 404.
+                        this.$router.push('/posts');
                     }
                 });
     },
@@ -68,7 +71,7 @@ export default {
 
     methods: {
         saveForm: function() {
-            axios.patch('/api/profiles/' + this.$route.params.id  + '?api_token=' + this.user.api_token , this.form)
+            axios.patch('/api/posts/' + this.$route.params.id  + '?api_token=' + this.user.api_token , this.form)
                 .then(response => {
                         this.$router.push(response.data.links.self);
                     })

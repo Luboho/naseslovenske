@@ -24,8 +24,6 @@ class ProfilesController extends Controller
 
     public function index(Profile $profile) 
     {
-        // $this->authorize('viewAny', Profile::class);
-
         return ProfileResource::collection(Profile::all());
     }
 
@@ -51,21 +49,18 @@ class ProfilesController extends Controller
 
                 return (new ProfileResource($profile))
                     ->response()
-                    ->setStatusCode(Response::HTTP_OK);
+                    ->setStatusCode(Response::HTTP_CREATED);
             } 
             
         } else {
             return response()
                     ->json(['errors' => [ 'image' => ['Pole obrázok je povinný.']]], 422)
                     ->setStatusCode(Response::HTTP_UNPROCESSABLE_ENTITY);
-                    
         }
     }
 
     public function show(Profile $profile) 
     {
-        // $this->authorize('view', $profile);
-
         return new ProfileResource($profile);
     }
 
@@ -106,30 +101,7 @@ class ProfilesController extends Controller
                     ->json(['errors' => [ 'image' => ['Pole obrázok je povinný.']]], 422)
                     ->setStatusCode(Response::HTTP_UNPROCESSABLE_ENTITY);
                     
-        }
-
-
-        // if(request('image') != null) {
-        //     $allowedExtensions = ['jpeg', 'jpg', 'png'];
-
-        //     // Converting file from base64 binnary code, from request.
-        //     $fileExtension = explode('/', mime_content_type($request->image))[1];
-
-        //     if(Str::of($fileExtension)->contains($allowedExtensions)) {
-
-        //         //Make File name <unique
-        //         $imageName = time().'.'.$fileExtension;
-
-        //         // Sending data to DB
-        //         $profile->update(array_merge($this->validateData(), ['image' => $imageName]));
-        //         // Store file to storage.
-        //         Image::make($request->image)->save(public_path('storage/uploads/').$imageName)->resize(150, 100);
-        //     }
-        // }
-        // return (new ProfileResource($profile))
-        //     ->response()
-        //     ->setStatusCode(Response::HTTP_OK);
-        
+        }  
     }
 
     public function destroy(Profile $profile) 

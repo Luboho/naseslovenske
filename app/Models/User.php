@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Post;
 use App\Models\Profile;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasMany(Profile::class);
+    }
+
+    public function post()
+    {
+        return $this->hasMany(Post::class);
     }
 }

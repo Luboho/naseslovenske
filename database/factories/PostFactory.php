@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'user_id' => User::factory(),
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph(10, true),
-            'image' => ''
+            'image' => 'storage/defaultPics/defaultArticle.jpg'
         ];
     }
 }

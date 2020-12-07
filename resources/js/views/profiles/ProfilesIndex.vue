@@ -5,6 +5,7 @@
             <div v-if="profiles.length === 0">
                 <p>Nemáte žiadne príspevky. <router-link to="/profiles/create">Vytvoriť príspevok</router-link></p>
             </div>
+      <h1 class="text-blue-500 pb-4 uppercase italic font-bold"> Profily naších domácich značiek</h1> 
 
             <div v-for="profile in profiles" :key="profile.data.id" class="p-2">
                 <div class="grid sm:flex lg:grid-cols-2 shadow-xl bg-indigo-300 px-2 rounded-3xl">

@@ -18,12 +18,12 @@ class Post extends JsonResource
             'data' => [
                 'post_id' => $this->id,
                 'title' => $this->title,
-                'description' => $this->description,
+                'description' => $this->description, 
                 'image' => $this->image,
-                'last_updated' => $this->updated_at->diffForHumans(), // Carbon instance method.
+                'last_updated' => $this->updated_at->diffForHumans(),
             ],
             'links' => [
-                'self' => $this->path(),
+                'self' => $this->path(),// Post Model Method.
             ]
         ];
     }

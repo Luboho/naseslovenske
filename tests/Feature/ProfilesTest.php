@@ -24,9 +24,9 @@ class ProfilesTest extends TestCase
 
 
     /** @test */
-    public function a_list_of_profiles_can_be_fetched_for_the_authenticated_user()
+    public function a_list_of_profiles_can_be_retrieved()
     {
-        $this->withoutExceptionHandling();
+        // $this->withoutExceptionHandling();
 
         $user = User::factory()->create();
         $profile = Profile::factory()->create(['user_id' => $user->id]);
@@ -66,13 +66,13 @@ class ProfilesTest extends TestCase
         
         $user = User::factory()->create();
 
-        $response = $this->profile('/api/profiles', $this->data());
+        $response = $this->post('/api/profiles', $this->data());
 
         $profile = Profile::first();
 
         $this->assertEquals('Test Title', $profile->title);
         $this->assertEquals('Test text, Test text, Test text,', $profile->description);
-        $this->assertEquals('storage/defaultPics/defaultArticle.jpg', $profile->image);
+        $this->assertEquals('public/storage/defaultPics/defaultArticle.jpg', $profile->image);
         $response->assertStatus(Response::HTTP_CREATED);
         $response->assertJson([
             'data' => [
@@ -133,7 +133,7 @@ class ProfilesTest extends TestCase
 
 
     /** @test */
-    public function a_profile_can_be_patched()
+    public function a_profile_can_be_patched_by_owner_of_it()
     {
         // $this->withoutExceptionHandling();
 
@@ -142,6 +142,7 @@ class ProfilesTest extends TestCase
         $response = $this->patch('/api/profiles/' . $profile->id, $this->data());
 
         $profile = $profile->fresh();
+        
         $this->assertEquals('Test Title', $profile->title);
         $this->assertEquals('Test text, Test text, Test text,', $profile->description);
         $this->assertEquals('storage/defaultPics/defaultArticle.jpeg', $profile->image);
@@ -200,7 +201,7 @@ class ProfilesTest extends TestCase
         return [
             'title' => 'Test Title',
             'description' => 'Test text, Test text, Test text,',
-            'image' => 'storage/defaultPics/defaultArticle.jpeg',
+            'image' => 'public/storage/defaultPics/defaultArticle.jpg',
             'api_token' => $this->user->api_token,
         ];
     }

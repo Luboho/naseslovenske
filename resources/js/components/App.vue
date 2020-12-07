@@ -19,36 +19,46 @@
                     <div class="tracking-wide pl-3">Add New</div>
                     </router-link>
 
-                    <!-- <p class="pt-12 text-gray-500 text-xs uppercase font-bold">General</p>
+                    <p class="pt-12 text-gray-500 text-xs uppercase font-bold">Posts</p>
 
-                    <router-link to="/contacts" class="flex items-center py-2 hover:text-blue-600 text-sm">
+                    <router-link to="/" class="flex items-center py-2 hover:text-blue-600 text-sm">
+                        <svg viewBox="0 0 24 24" class="fill-current text-blue-600 w-5 h-5">
+                            <path d="M0,0v35h35V0H0z M33,33H2V2h31V33z"/><rect x="10" y="5" width="20" height="2.824"/><rect x="10" y="9.438" width="20" height="2.819"/><rect x="10" y="13.869" width="20" height="2.824"/><rect x="10" y="18.307" width="20" height="2.818"/><rect x="10" y="22.739" width="20" height="2.829"/><rect x="10" y="27.18" width="20" height="2.82"/><rect x="5" y="5" width="2.824" height="2.824"/><rect x="5" y="9.436" width="2.824" height="2.823"/><rect x="5" y="13.87" width="2.824" height="2.823"/><rect x="5" y="18.305" width="2.824" height="2.824"/><rect x="5" y="22.74" width="2.824" height="2.824"/><rect x="5" y="27.176" width="2.824" height="2.824"/>
+                        </svg>
+                        <div class="tracking-wide pl-3">Posts</div>
+                    </router-link>
+
+                    <p class="pt-12 text-gray-500 text-xs uppercase font-bold">Profiles</p>
+
+                    <router-link to="/profiles" class="flex items-center py-2 hover:text-blue-600 text-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current text-blue-600 w-5 h-5">
                             <path class="st0" d="M20 2h-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1h-4V1c0-.6-.4-1-1-1s-1 .4-1 1v1H7V1c0-.6-.4-1-1-1S5 .4 5 1v1H4C1.8 2 0 3.8 0 6v14c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4zM4 4h1v1c0 .6.4 1 1 1s1-.4 1-1V4h4v1c0 .6.4 1 1 1s1-.4 1-1V4h4v1c0 .6.4 1 1 1s1-.4 1-1V4h1c1.1 0 2 .9 2 2v2H2V6c0-1.1.9-2 2-2zm16 18H4c-1.1 0-2-.9-2-2V10h20v10c0 1.1-.9 2-2 2zM8 14c0 .6-.4 1-1 1H5c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm6 0c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm6 0c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zM8 18c0 .6-.4 1-1 1H5c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm6 0c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm6 0c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1z"/>
                         </svg>
-                    <div class="tracking-wide pl-3">Contacts</div>
-                    </router-link>
-                    <router-link to="/birthdays" class="flex items-center py-2 hover:text-blue-600 text-sm">
-                        <svg viewBox="0 0 24 24" class="fill-current text-blue-600 w-5 h-5">
-                            <path fill-rule="evenodd" d="M12.1 6.8c1.2 0 2.1-1 2.1-2.1 0-.4-.1-.8-.3-1.1L12.1.5l-1.8 3.1c-.2.3-.3.6-.3 1 0 1.2 1 2.2 2.1 2.2zm6.4 3.1h-5.3V7.8h-2.1v2.1H5.8c-1.8 0-3.2 1.4-3.2 3.2v9.5c0 .6.5 1.1 1.1 1.1h16.9c.6 0 1.1-.5 1.1-1.1v-9.5c0-1.8-1.5-3.2-3.2-3.2zm1 11.7H4.7v-3.2c1 0 1.9-.4 2.5-1.1l1.2-1.1 1.1 1.1c1.4 1.4 3.8 1.4 5.2 0l1.1-1.1 1.1 1.1c.7.7 1.6 1.1 2.5 1.1v3.2h.1zm0-4.8c-.5 0-1-.2-1.4-.6l-2.3-2.3-2.3 2.3c-.8.8-2.1.8-2.9 0l-2.3-2.3L6 16.2c-.4.4-.9.6-1.4.6v-3.7c0-.6.5-1.1 1.1-1.1h12.7c.6 0 1.1.5 1.1 1.1v3.7z" clip-rule="evenodd"/>
-                        </svg>
-                    <div class="tracking-wide pl-3">Birthdays</div>
+                    <div class="tracking-wide pl-3">Profiles</div>
                     </router-link>
 
                     <p class="pt-12 text-gray-500 text-xs uppercase font-bold">Settings</p>
+                    <router-link to="/login" class="flex items-center py-2 hover:text-blue-600 text-sm">
+                        <svg viewBox="0 0 24 24" class="fill-current text-blue-600 w-5 h-5">
+                            <path fill-rule="evenodd" d="M12.1 6.8c1.2 0 2.1-1 2.1-2.1 0-.4-.1-.8-.3-1.1L12.1.5l-1.8 3.1c-.2.3-.3.6-.3 1 0 1.2 1 2.2 2.1 2.2zm6.4 3.1h-5.3V7.8h-2.1v2.1H5.8c-1.8 0-3.2 1.4-3.2 3.2v9.5c0 .6.5 1.1 1.1 1.1h16.9c.6 0 1.1-.5 1.1-1.1v-9.5c0-1.8-1.5-3.2-3.2-3.2zm1 11.7H4.7v-3.2c1 0 1.9-.4 2.5-1.1l1.2-1.1 1.1 1.1c1.4 1.4 3.8 1.4 5.2 0l1.1-1.1 1.1 1.1c.7.7 1.6 1.1 2.5 1.1v3.2h.1zm0-4.8c-.5 0-1-.2-1.4-.6l-2.3-2.3-2.3 2.3c-.8.8-2.1.8-2.9 0l-2.3-2.3L6 16.2c-.4.4-.9.6-1.4.6v-3.7c0-.6.5-1.1 1.1-1.1h12.7c.6 0 1.1.5 1.1 1.1v3.7z" clip-rule="evenodd"/>
+                        </svg>
+                    <div class="tracking-wide pl-3">Login</div>
+                    </router-link>
 
                     <router-link to="/logout" class="flex items-center py-2 hover:text-blue-600 text-sm">
                         <svg viewBox="0 0 24 24" class="fill-current text-blue-600 w-5 h-5">
-                        <path d="M21 3h-3.8c-.7 0-1.3-.6-1.3-1.3S16.5.4 17.2.4h5.1c.7 0 1.3.6 1.3 1.3v20.5c0 .7-.6 1.3-1.3 1.3h-5.1c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3H21V3zm-6.9 7.7L8.6 5.2c-.5-.5-.6-1.3-.1-1.8s1.3-.5 1.8 0l7.7 7.7c.8.8.2 2.2-.9 2.2H1.8c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3h12.3zm-1.6 4.8c.5-.5 1.3-.4 1.8.1s.4 1.3-.1 1.8l-3.8 3.2c-.5.5-1.3.4-1.8-.1-.6-.5-.5-1.3 0-1.7l3.9-3.3z"/>
-                    </svg>
-                    <div class="tracking-wide pl-3">Logout</div>
-                    </router-link> -->
+                            <path d="M21 3h-3.8c-.7 0-1.3-.6-1.3-1.3S16.5.4 17.2.4h5.1c.7 0 1.3.6 1.3 1.3v20.5c0 .7-.6 1.3-1.3 1.3h-5.1c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3H21V3zm-6.9 7.7L8.6 5.2c-.5-.5-.6-1.3-.1-1.8s1.3-.5 1.8 0l7.7 7.7c.8.8.2 2.2-.9 2.2H1.8c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3h12.3zm-1.6 4.8c.5-.5 1.3-.4 1.8.1s.4 1.3-.1 1.8l-3.8 3.2c-.5.5-1.3.4-1.8-.1-.6-.5-.5-1.3 0-1.7l3.9-3.3z"/>
+                        </svg>
+                        <div class="tracking-wide pl-3">Logout</div>
+                    </router-link>
+
                 </nav>
             </div>
             <!--  -->
             <!-- Right Section -->
             <!-- Right Top Section -->
             <!-- Right Bottom Section -->
-            <div class="flex flex-col flex-1 h-screen overflow-y-hidden"> 
+            <div class="flex flex-col flex-1 w-screen h-screen overflow-y-hidden"> 
                 <router-view :user="user" class="p-6 overflow-x-hidden"></router-view>
             </div>
         </div>
@@ -58,6 +68,7 @@
 <script>
 
 export default {
+
     name: "App",
 
     props: [
@@ -66,8 +77,15 @@ export default {
 
     methods: {
         setUserToLocal: function() {
-            localStorage.setItem('user', JSON.stringify({'usermail' : this.user.email, 'userApiToken' : this.user.api_token}));
-        }
+            let hours = 1;
+            let saved = localStorage.getItem('authenticated');
+            if(saved && (new Date().getTime() - saved > hours * 60 * 60 * 1000)) {
+                localStorage.clear();
+            }
+            localStorage.setItem('authenticated', new Date().getTime());
+            localStorage.setItem('user_api',  this.user.api_token);
+        },
+
     },
 
     created() {     // Similar to mounted() property, but created() is executed asap after App is created. So, earlier than mounted() which is executed afer than component is created.

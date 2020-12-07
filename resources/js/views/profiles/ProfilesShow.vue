@@ -2,6 +2,7 @@
   <div>
       <div v-if="loading">Loading...</div>
         <div v-else>
+
             <div class="flex justify-between">
                 <a href="#" @click="$router.back()" class="text-indigo-400 text-md py-2">
                     ← Back

@@ -1,5 +1,10 @@
 <template>
   <div class="p-3">
+        <h1 class="text-blue-500 pb-4 uppercase italic font-bold"> Pridať profil na reklamný portál</h1> 
+        <a href="#" class="py-5 text-indigo-400" @click="$router.back()">
+            ← Back
+        </a>
+
       <form @submit.prevent="submitForm" enctype="multipart/form-data">
         <InputField name="title" label="Titul" :errors="errors" placeholder="Titul" 
                         @update:field = "form.title = $event" />
@@ -18,8 +23,8 @@
 </template>
 
 <script>
-    import InputField from '../components/InputField';
-    import FileInput from '../components/FileInput';
+    import InputField from '../../components/InputField';
+    import FileInput from '../../components/FileInput';
 
 export default {
     name: "ProfilesCreate",
