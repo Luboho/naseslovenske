@@ -41,7 +41,6 @@ export default {
     },
 
     mounted() {
-        console.log(this.$route);
         axios.get('/api/posts/' + this.$route.params.id)
                 .then(response => {
                     this.form = response.data.data;

@@ -21,6 +21,7 @@ class Profile extends JsonResource
                 'description' => $this->description,
                 'image' => $this->image,
                 'last_updated' => $this->updated_at->diffForHumans(), // Carbon instance method.
+                'user_id' => $this->user_id,
             ],
             'links' => [
                 'self' => $this->path(),

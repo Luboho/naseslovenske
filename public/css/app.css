@@ -590,9 +590,9 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px){
+@media (min-width: 250px){
   .container{
-    max-width: 640px;
+    max-width: 250px;
   }
 }
 
@@ -11822,7 +11822,7 @@ video {
 }
 
 .max-w-screen-sm{
-  max-width: 640px;
+  max-width: 250px;
 }
 
 .max-w-screen-md{
@@ -21646,14 +21646,14 @@ video {
           animation: bounce 1s infinite;
 }
 
-@media (min-width: 640px){
+@media (min-width: 250px){
   .sm\:container{
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 250px){
     .sm\:container{
-      max-width: 640px;
+      max-width: 250px;
     }
   }
 
@@ -32883,7 +32883,7 @@ video {
   }
 
   .sm\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 250px;
   }
 
   .sm\:max-w-screen-md{
@@ -42647,9 +42647,9 @@ video {
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 250px){
     .md\:container{
-      max-width: 640px;
+      max-width: 250px;
     }
   }
 
@@ -53879,7 +53879,7 @@ video {
   }
 
   .md\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 250px;
   }
 
   .md\:max-w-screen-md{
@@ -63643,9 +63643,9 @@ video {
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 250px){
     .lg\:container{
-      max-width: 640px;
+      max-width: 250px;
     }
   }
 
@@ -74875,7 +74875,7 @@ video {
   }
 
   .lg\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 250px;
   }
 
   .lg\:max-w-screen-md{
@@ -84639,9 +84639,9 @@ video {
     width: 100%;
   }
 
-  @media (min-width: 640px){
+  @media (min-width: 250px){
     .xl\:container{
-      max-width: 640px;
+      max-width: 250px;
     }
   }
 
@@ -95871,7 +95871,7 @@ video {
   }
 
   .xl\:max-w-screen-sm{
-    max-width: 640px;
+    max-width: 250px;
   }
 
   .xl\:max-w-screen-md{

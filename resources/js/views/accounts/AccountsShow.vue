@@ -10,7 +10,7 @@
 <script>
 
     export default {
-        name: "PostCreate",
+        name: "AccountsShow",
         props: ["user"],
     }
 </script>

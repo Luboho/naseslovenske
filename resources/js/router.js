@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 // auth
 import Login from './auth/Login';
 import Logout from './auth/Logout';
+// accounts
+import AccountsShow from './views/accounts/AccountsShow';
 // posts
 import PostsIndex from './views/posts/PostsIndex';
 import PostsCreate from './views/posts/PostsCreate';
@@ -21,13 +23,17 @@ Vue.use(VueRouter);
 const router = new VueRouter({
 
     routes: [
-        { 
+        {   name: 'login',
             path: '/login', 
             component: Login,
         },
         { 
             path: '/logout', 
             component: Logout,
+        },
+        { 
+            path: '/accounts', 
+            component: AccountsShow,
         },
         { 
             path: '/', 
@@ -72,7 +78,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && isUserInLs() === false) {
     // User is not in LS.
-        router.push({name: Login});
+        router.push({name: 'login'});
         location.reload();
     }
     // User is stored in LS.  

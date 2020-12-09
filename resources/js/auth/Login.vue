@@ -11,7 +11,7 @@ export default {
   props: ['user'],
 
   created() {
-    
+        location.reload();
   }
 }
 </script>

@@ -8,7 +8,8 @@
                     ← Back
                 </a>
 
-                 <div class="relative">
+<!-- Edit/Delete Buttons -->
+                 <div v-show="showButtons" class="relative">
                     <router-link :to="'/profiles/' + profile.profile_id + '/edit?file_name=' + profile.image" class="px-4 py-2 mr-2 rounded border border-green-500 text-sm font-bold">Edit</router-link>    <!-- profile.id saved in data: properties below. -->
                     <a href="#" @click="modal = ! modal" class="px-4 py-2 border border-red-500 text-sm font-bold rounded text-red-500">Delete</a>
                                         <!-- set modal to opposite -->
@@ -22,7 +23,8 @@
                         </div>
                     </div>
                     
-                </div>                  
+                </div>
+<!-- End Edit/Delete Buttons -->
                     <div v-if="modal" @click="modal = ! modal" class="bg-black opacity-50 absolute right-0 left-0 top-0 bottom-0 z-10"></div>
             
             </div>
@@ -46,8 +48,7 @@
 <script>
     export default {
         name: "ProfilesShow",
-        props: ['user'],
-
+        props: ['user', 'showButtons'],
         
         mounted() {
             axios.get('/api/profiles/' + this.$route.params.id)
@@ -69,6 +70,16 @@
                 profile: null,
                 loading: true,
                 modal: false,
+            }
+        },
+
+        watch: {
+            profile: function() {
+                if(this.user !== undefined){
+                    if(this.profile.user_id === this.user.id) {
+                        this.showButtons = true
+                    }
+                }
             }
         },
 

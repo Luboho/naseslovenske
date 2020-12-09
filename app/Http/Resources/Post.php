@@ -21,6 +21,7 @@ class Post extends JsonResource
                 'description' => $this->description, 
                 'image' => $this->image,
                 'last_updated' => $this->updated_at->diffForHumans(),
+                'user_id' => $this->user_id
             ],
             'links' => [
                 'self' => $this->path(),// Post Model Method.
