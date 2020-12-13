@@ -9,7 +9,7 @@
                 </a>
 
 <!-- Edit/Delete Buttons -->
-                 <div v-show="showButtons" class="relative">
+                 <div v-show="showButtons" class="relative animate-buttons">
                     <router-link :to="'/profiles/' + profile.profile_id + '/edit?file_name=' + profile.image" class="px-4 py-2 mr-2 rounded border border-green-500 text-sm font-bold">Edit</router-link>    <!-- profile.id saved in data: properties below. -->
                     <a href="#" @click="modal = ! modal" class="px-4 py-2 border border-red-500 text-sm font-bold rounded text-red-500">Delete</a>
                                         <!-- set modal to opposite -->
@@ -48,7 +48,7 @@
 <script>
     export default {
         name: "ProfilesShow",
-        props: ['user', 'showButtons'],
+        props: ['user'],
         
         mounted() {
             axios.get('/api/profiles/' + this.$route.params.id)
@@ -70,6 +70,7 @@
                 profile: null,
                 loading: true,
                 modal: false,
+                showButtons: false,
             }
         },
 
@@ -102,6 +103,20 @@
     }
 </script>
 
-<style>
+<style scoped>
+/* Animations */
+.animate-buttons {
+  animation-name: stretch;
+  animation-duration: 1.0s;
+  animation-timing-function: ease-out;
+}
 
+@keyframes stretch {
+  0% {
+    transform: scale(.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
 </style>

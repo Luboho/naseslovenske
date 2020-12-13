@@ -1,9 +1,11 @@
 <template>
   <div class="p-3">
-          <a href="#" class="py-2 text-indigo-400" @click="$router.back()">
-              ← Back
-          </a>
-          <h1 class="text-blue-500 py-4 uppercase italic font-bold"> Upraviť príspevok</h1> 
+          <h1 class="text-blue-500 uppercase italic font-bold"> Upraviť príspevok</h1> 
+          <div class="py-10">
+            <a href="#" class="text-indigo-400" @click="$router.back()">
+                ← Back
+            </a>
+          </div>
 
       <form @submit.prevent="saveForm" enctype="multipart/form-data">
         <InputField name="title" label="Title" :errors="errors" placeholder="Titul" 

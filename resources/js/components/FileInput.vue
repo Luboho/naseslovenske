@@ -1,17 +1,17 @@
 <template>
   <div class="relative pb-4">
-    <label :for="name" class="text-blue-500 pt-2 uppercase text-xs font-bold absolute">{{ label }}</label>
+    <label :for="name" class="text-blue-500 pt-2 px-1 uppercase text-xs font-bold absolute">{{ label }}</label>
     
     <!-- File preview -->  
-    <div class="pt-8 pb-2 w-full outline-none border-blue-400">
+    <div class="pt-8 pb-2 px-1 w-full outline-none border-blue-400">
         <div v-if="previewImage"
-            class=" imagePreviewWrapper rounded-lg"
+            class="animate imagePreviewWrapper rounded-lg"
             :style="{ 'background-image': `url(${previewImage})` }"
             @click="selectImage">
         </div>
     </div>
 
-    <div v-if="enableCurrentImgElement" class="w-200px pb-2">
+    <div v-if="enableCurrentImgElement" class="animate w-200px pb-2">
         <img :src="'/storage/uploads/' + getFileNameFromUrl()" class="rounded-lg" >
     </div>
 
@@ -21,7 +21,7 @@
       type="file"
       @change="filesSelected"
       @input="pickFile" 
-      class="w-full text-gray-900 border-b pb-2"
+      class="w-full text-gray-900 border-b pb-2 px-1"
      :class="errorClassObject()"
       >
     <!-- end of File preview-->
@@ -160,6 +160,21 @@ export default {
 </script>
 
 <style scoped>
+/* Animations */
+.animate {
+  animation-name: stretch;
+  animation-duration: 1.0s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
 .imagePreviewWrapper {
     width: 200px;
     height: 150px;
@@ -169,4 +184,6 @@ export default {
 .error-field {
         @apply .border-red-500 .border-b-2
     }
+
+
 </style>

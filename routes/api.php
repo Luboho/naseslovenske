@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\ProfilesController;
 
 
@@ -24,6 +25,9 @@ Route::get('/logout-manual', function() {
 
 
 Route::middleware('auth:api')->group(function() {
+    // Accounts (guarded)
+    Route::get('/accounts', [AccountsController::class, 'index']);
+    
     // Posts    (guarded)
     Route::post('/posts', [PostsController::class, 'store']);
     Route::patch('/posts/{post}', [PostsController::class, 'update']);

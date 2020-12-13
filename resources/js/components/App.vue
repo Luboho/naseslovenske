@@ -1,8 +1,8 @@
 <template>
-    <div class="h-screen">
+    <div class="h-screen bg-gray-200">
         <div class="lg:flex md:inline-block sm:inline-block">
             <!-- Navigation -->
-            <MainNav :user="user" :showParagraph="showParagraph" />
+            <MainNav :user="user" />
                
             <!-- Right Section -->
             <!-- Right Top Section -->
@@ -26,12 +26,6 @@ export default {
     props: [
         'user',
     ],
-
-    data: function() {
-        return {
-            showParagraph: false,
-        }
-    },
 
     methods: {
         setUserToLocal: function() {

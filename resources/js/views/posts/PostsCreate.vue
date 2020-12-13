@@ -1,11 +1,11 @@
 <template>
   <div class="p-3">
         <h1 class="text-blue-500 pb-4 uppercase italic font-bold"> Nový príspevok na reklamný portál</h1> 
-        <a href="#" class="py-5 text-indigo-400" @click="$router.back()">
+        <a href="#" class=" text-indigo-400" @click="$router.back()">
             ← Back
         </a>
 
-      <form @submit.prevent="submitForm" enctype="multipart/form-data">
+      <form @submit.prevent="submitForm" enctype="multipart/form-data" class="pt-3">
         <InputField name="title" label="Titul" :errors="errors" placeholder="Titul" 
                         @update:field = "form.title = $event" />
         <InputField name="description" label="Popis" :errors="errors" placeholder="Tu patrí článok" 
@@ -55,7 +55,6 @@ export default {
                 
                 axios.post('/api/posts?api_token=' + this.user.api_token, this.form)
                     .then(response => {
-                        
                         this.$router.push(response.data.links.self);
                     })
                     .catch(errors => {

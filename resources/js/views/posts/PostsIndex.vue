@@ -8,7 +8,7 @@
       <h1 class="text-blue-500 pb-4 uppercase italic font-bold"> Main Page</h1> 
 
             <div v-for="post in posts" :key="post.data.id" class="p-2">
-                <div class="sm:flex-col grid md:grid-cols-2 lg:grid-cols-2 shadow-xl bg-indigo-300 px-2 rounded-3xl">
+                <div class="animate sm:flex-col grid md:grid-cols-2 lg:grid-cols-2 shadow-xl bg-indigo-300 px-2 rounded-3xl">
                     <div class="place-self-center p-4">
                             
                         <img :src="'/storage/uploads/' + post.data.image" class="rounded-full" >
@@ -61,5 +61,19 @@
 </script>
 
 <style>
+/* Animations */
+.animate {
+  animation-name: stretch;
+  animation-duration: 1.0s;
+  animation-timing-function: ease-out;
+}
 
+@keyframes stretch {
+  0% {
+    transform: scale(.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
 </style>

@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import Login from './auth/Login';
 import Logout from './auth/Logout';
 // accounts
-import AccountsShow from './views/accounts/AccountsShow';
+import AccountsIndex from './views/accounts/AccountsIndex';
 // posts
 import PostsIndex from './views/posts/PostsIndex';
 import PostsCreate from './views/posts/PostsCreate';
@@ -33,7 +33,8 @@ const router = new VueRouter({
         },
         { 
             path: '/accounts', 
-            component: AccountsShow,
+            component: AccountsIndex,
+            meta: { requiresAuth: true }
         },
         { 
             path: '/', 
