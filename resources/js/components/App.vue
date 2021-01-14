@@ -1,13 +1,20 @@
 <template>
     <div class="h-screen bg-gray-200">
-        <div class="lg:flex md:inline-block sm:inline-block">
+            <!-- UI Messages -->
+            <UIMessages />
+            <!-- end of UI Messages -->
+            <div class="lg:flex md:inline-block sm:inline-block">
             <!-- Navigation -->
             <MainNav :user="user" />
-               
+            
+            
+
+
             <!-- Right Section -->
             <!-- Right Top Section -->
             <!-- Right Bottom Section -->
             <div class="flex flex-col flex-1 w-screen h-screen overflow-y-hidden"> 
+
                 <router-view :user="user" class="p-6 overflow-x-hidden"></router-view>
             </div>
         </div>
@@ -16,17 +23,19 @@
 
 <script>
 import MainNav from './MainNav';
+import UIMessages from './UIMessages';
 
 export default {
 
     name: "App",
-    components: {
-        MainNav
-    },
     props: [
         'user',
     ],
 
+    components: {
+        MainNav,
+        UIMessages
+    },
     methods: {
         setUserToLocal: function() {
             let hours = 1;

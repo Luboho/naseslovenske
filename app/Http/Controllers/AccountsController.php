@@ -22,7 +22,6 @@ class AccountsController extends Controller
     public function index(Post $post) 
     {
         $user = auth()->user();
-
         return AccountResource::collection(Post::where('user_id' , $user->id)->get());
     }
 }

@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mx-auto h-full flex justify-center items-center bg-gray-300">
+<login></login>
+{{-- <div class="mx-auto h-full flex justify-center items-center bg-gray-300">
     <div class="w-96 bg-indigo-500 rounded-lg shadow-xl p-8 mt-2">
         
                 <div class="justify-center text-indigo-100 w-96">
-                
+                <a href="/">
                     <div class="flex">
                         <div class="w-32" >
                             <img src="{!! asset('storage/svgs/SRflag.svg') !!}" >
@@ -16,7 +17,7 @@
                         </div>
                     </div>
                     <h1 class="text-sm pt-2 font-bold">Naše slovenské</h1>
-                    
+                </a>
                 </div>
 
 
@@ -95,5 +96,6 @@
                 </form>
              
     </div>
-</div>
+</div> --}}
+
 @endsection
